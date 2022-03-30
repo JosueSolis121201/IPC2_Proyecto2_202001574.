@@ -1,153 +1,183 @@
 from graphviz import Digraph
 
-class nodo:
+class Nodo:
     def __init__(self):
-        self.dato=None
+        self.dato = None
         #Coordenadas
-        self.posVertical =None
+        self.posVertical = None
         self.posHorizontal =None
         #Apuntadores
-        self.arriba =None
-        self.abajo=None
-        self.izquierda =None
-        self.derecha =None
+        self.derecha = None
+        self.izquierda = None
+        self.arriba = None
+        self.abajo = None
 
-class matrizOrtogonal:
+class MatrizOrtogonal:
     def __init__(self):
-        #crear nodo raiz
-        self.raiz = nodo()
-        self.raiz.posVertical=0
-        self.raiz.posHorizontal=0
+        #Creamos el nodo raiz en 0,0
+        self.raiz = Nodo()
+        self.raiz.posVertical = 0
+        self.raiz.posHorizontal = 0
 
-    def crearIndiceVertical(self,posocion):
-        #recorrer nodos de manera vertical 
-        #crear un temporal
-        #tmp=temporal
+    def crearIndiceVertical(self, pos):
+        # recorrer todos los nodos de manera vertical
+        # creamos un temporal
         tmp = self.raiz
         while tmp != None:
-            #No existe el indice, solo hay menores
-            if tmp.abajo == None and tmp.posVertical < posocion:
-                #ya no hay mas nodos verticales
-                #insertarlo al final
-                nuevo=nodo()
-                nuevo.posVertical = posocion
-                nuevo.posHorizontal =0      #<--- debido a que esta en la cabecera
-                nuevo.arriba = tmp # donde venia
-                tmp.abajo = nuevo
-                return  tmp.abajo
-            #indice actual es igual al nuevo
-            if  tmp.posVertical == posocion:
-                #no hacer nada
-                return tmp
-
-            #indice actual es el menor y el siguiente es el mayor( en medio)
-            if tmp.posVertical < posocion and tmp.abajo.posVertical > posocion:
-                #insertar nodo en meido del acutal y abajo 
-                nuevo = nodo()
+            # no existe el indice; solo hay índices menores
+            if tmp.abajo == None and tmp.posVertical < pos:
+                # ya no hay más nodos en vertical
+                # se inserta al final
+                nuevo = Nodo()
                 nuevo.posHorizontal = 0
-                nuevo.posVertical = posocion
-                # asignar abajo y arriba para el  nuevo
-                nuevo.abajo = tmp.abajo
-                nuevo.arriba=tmp
-                tmp.abajo.arriba = nuevo
+                nuevo.posVertical = pos
+                nuevo.arriba = tmp
                 tmp.abajo = nuevo
                 return tmp.abajo
-            #pasar al siguiente nodo de abajo si no cumplio ninguna validacion
-            tmp= tmp.abajo
-
-    def crearIndiceHorizontal(self,pos):
-        #recorrer los nodos ( horizontal)
-        tmp=self.raiz
-        while tmp != None:
-            #no existe el nodo de la posicion
-            if tmp.derecha == None and tmp.posHorizontal < pos:
-                #ya no hay nodos al final insertar al final
-                nuevo= nodo()
-                nuevo.posHorizontal = pos 
-                nuevo.posVertical = 0
-                #enlace
-                nuevo.izquierda =tmp
-                tmp.derecha = nuevo 
-                return tmp.derecha
-            #indice actual es igual al nuevo 
-            if tmp.posHorizontal == pos:
+            
+            # indice actual es igual a el nuevo índice
+            if tmp.posVertical == pos :
                 # no hacer nada
                 return tmp
-            #indice actual es menor , pero pero siguiente   mayor ( caso tipo posicionar en medio)
-            if tmp.posHorizontal < pos and tmp.derecha.posHorizontal >pos:
-                # se inserta en medio
-                nuevo= nodo()
-                nuevo.posHorizontal= pos
-                nuevo.posVertical =0
-                #asignar apuntadores 
-                nuevo.derecha = tmp.derecha
-                nuevo.izquierda=tmp
-                tmp.derecha.izquierda = nuevo
+
+            # indice actual es menor, pero el siguiente es mayor
+            if tmp.posVertical < pos and tmp.abajo.posVertical > pos:
+                # insertar un nodo en medio del nodo actual y del nodo siguiente
+                nuevo = Nodo()
+                nuevo.posHorizontal = 0
+                nuevo.posVertical = pos
+
+                # asignar abajo y arriba para el nodo nuevo
+                nuevo.abajo = tmp.abajo
+                nuevo.arriba = tmp
+                
+                tmp.abajo.arriba = nuevo # reasignar arriba para el nodo de abajo
+                tmp.abajo = nuevo # reasignar abajo para el nodo actual
+                return tmp.abajo
+
+            # pasar al siguiente nodo abajo si no hubo un return
+            tmp = tmp.abajo
+
+    def crearIndiceHorizontal(self, pos):
+        # recorrer todos los nodos de manera horizontal
+        tmp = self.raiz
+        while tmp != None:
+            # no existe el indice; solo hay índices menores
+            if tmp.derecha == None and tmp.posHorizontal < pos:
+                # ya no hay más nodos en horizontal
+                # se inserta al final
+                nuevo = Nodo()
+                nuevo.posHorizontal = pos
+                nuevo.posVertical = 0
+                nuevo.izquierda = tmp
                 tmp.derecha = nuevo
                 return tmp.derecha
-        # no encontro nodo pasar al siguiente para que no se encicle indefinidamente    
-        tmp= tmp.derecha
-    
-    def insertarVertical(self, nodo, indiceHorizontal): #indiceHorizontal es de tipo nodo
-        #recorrer nodo de forma horizontal 
-        tmp=indiceHorizontal
+            
+            # indice actual es igual a el nuevo índice
+            if tmp.posHorizontal == pos :
+                # no hacer nada
+                return tmp
+
+            # indice actual es menor, pero el siguiente es mayor
+            if tmp.posHorizontal < pos and tmp.derecha.posHorizontal > pos:
+                # insertar un nodo en medio del nodo actual y del nodo siguiente
+                nuevo = Nodo()
+                nuevo.posHorizontal = pos
+                nuevo.posVertical = 0
+
+                # asignar derecha y arriba para el nodo nuevo
+                nuevo.derecha = tmp.derecha
+                nuevo.izquierda = tmp
+                
+                tmp.derecha.izquierda = nuevo # reasignar arriba para el nodo de derecha
+                tmp.derecha = nuevo # reasignar derecha para el nodo actual
+                return tmp.derecha
+                
+            # pasar al siguiente nodo derecha si es que no hubo return 
+            tmp = tmp.derecha
+
+    def insertarVertical(self, nodo, indiceHorizontal):
+        # recorrer todos los nodos de manera horizontal para insertar los verticales
+        tmp = indiceHorizontal
         while tmp != None:
-            #no existe el nodo, esta hasta el final 
-            if tmp.abajo ==None and tmp.posVertical < nodo.posVertical:
-                #ya no hay nodos abajo
+            # no existe el indice; solo hay índices menores
+            if tmp.abajo == None and tmp.posVertical < nodo.posVertical:
+                # ya no hay más nodos en vertical
+                # se inserta al final
                 nodo.arriba = tmp
                 tmp.abajo = nodo
-                return tmp.abajo 
-            #indice actual es igual al nuevo nodo
-            if tmp.posVertical == nodo.posVertical:
-                #no hacer nada, se sobre escribe 
+                return tmp.abajo
+            
+            # indice actual es igual a el nuevo índice
+            if tmp.posVertical == nodo.posVertical :
+                # no hacer nada, el dato se sobre escribe
                 tmp.dato = nodo.dato
                 return tmp
 
-            #indice actual es menor y el siguiente es mayor
+            # indice actual es menor, pero el siguiente es mayor
             if tmp.posVertical < nodo.posVertical and tmp.abajo.posVertical > nodo.posVertical:
-                
+                # insertar un nodo en medio del nodo actual y del nodo siguiente
+
+                # asignar abajo y arriba para el nodo nuevo
                 nodo.abajo = tmp.abajo
                 nodo.arriba = tmp
-                tmp.abajo.arriba =nodo
-                tmp.abajo = nodo
-            # pasar al siguiente nodo
-            tmp= tmp.abajo
-    
-    def insertarHorizontal(self, nodo,indiceVertical ):#indiceVertical es de tipo nodo
-        #recorrer los nodos
-        tmp=indiceVertical
-        while tmp != None:
-            if tmp.derecha == None and tmp.posHorizontal < nodo.posHorizontal:
-                nodo.izquierda = tmp
-                tmp.derecha = nodo 
-                return tmp.derecha
+                
+                tmp.abajo.arriba = nodo # reasignar arriba para el nodo de abajo
+                tmp.abajo = nodo # reasignar abajo para el nodo actual
+                return tmp.abajo
 
-            if tmp.posHorizontal == nodo.posHorizontal:
-                tmp.dato = nodo.dato
-                return tmp
-            if tmp.posHorizontal < nodo.posHorizontal and tmp.derecha.posHorizontal > nodo.posHorizontal:
-                nodo.derecha = tmp.derecha 
-                nodo.izquierda = tmp
-                tmp.derecha.izquierda = nodo
+            # pasar al siguiente nodo abajo si no hubo return
+            tmp = tmp.abajo
+       
+    def insertarHorizontal(self, nodo, indiceVertical):
+        # recorrer todos los nodos en horizontal
+        tmp = indiceVertical
+        while tmp != None:
+            # no existe el indice; solo hay índices menores
+            if tmp.derecha == None and tmp.posHorizontal < nodo.posHorizontal:
+                # ya no hay más nodos en horizontal
+                # se inserta al final
+                nodo.izquierda  = tmp
                 tmp.derecha = nodo
                 return tmp.derecha
-            tmp= tmp.derecha
+            
+            # indice actual es igual a el nuevo índice
+            if tmp.posHorizontal == nodo.posHorizontal :
+                # no hacer nada se sobre escribe
+                tmp.dato = nodo.dato
+                return tmp
 
-    def insertarDato(self, dato,posVertical, posHorizontal):
-        #crear cabeceras
+            # indice actual es menor, pero el siguiente es mayor
+            if tmp.posHorizontal < nodo.posHorizontal and tmp.derecha.posHorizontal > nodo.posHorizontal:
+                # insertar un nodo en medio del nodo actual y del nodo siguiente
+                # asignar derecha y arriba para el nodo nuevo
+                nodo.derecho = tmp.derecha
+                nodo.izquierda = tmp
+                
+                tmp.derecha.izquierda = nodo # reasignar arriba para el nodo de derecha
+                tmp.derecha = nodo # reasignar derecha para el nodo actual
+                return tmp.derecha
+                
+            # pasar al siguiente nodo derecha si esque no hubo return
+            tmp = tmp.derecha
+
+    def insertarDato(self,dato,  posVertical, posHorizontal):
+        # validar que los índices existan en horizontal y vertical
         indiceVertical = self.crearIndiceVertical(posVertical)
-        indiceHorizontal =self.crearIndiceHorizontal(posHorizontal)
+        indiceHorizontal = self.crearIndiceHorizontal(posHorizontal)
 
-        nuevoDato = nodo()
-        nuevoDato.posHorizontal = posHorizontal
-        nuevoDato.posVertical = posVertical
-        nuevoDato.dato = dato
+        # crear el nodo valor
+        nuevo = Nodo()
+        nuevo.posHorizontal = posHorizontal
+        nuevo.posVertical = posVertical
+        nuevo.dato = dato
 
-        self.insertarVertical(nuevoDato,indiceHorizontal)
-        self.insertarHorizontal(nuevoDato,indiceVertical)
-        print("nodo incertado.....")
-
+        # indexar/apuntar nodo nuevo en indice vertical
+        nuevo = self.insertarVertical(nuevo, indiceHorizontal) 
+        nuevo = self.insertarHorizontal(nuevo, indiceVertical)
+        print("Nodo insertado...")
+        pass
+    
     def recorrerMatriz(self):
         print("Graficando lista...")
         
@@ -226,25 +256,3 @@ class matrizOrtogonal:
             idAnterior = str(nodo.arriba.posVertical)+"_"+str(nodo.arriba.posHorizontal)
             grafo.edge(idAnterior, id)
         pass
-                             
-
-
-
-
-
-
-
-
-
-
-
-
-
-                 
-
-
-
-
-
-         
-
