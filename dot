@@ -1,0 +1,20 @@
+digraph G {
+	node [shape=box]
+	rankdir=TB
+	subgraph child1 {
+		rank=same
+		"0_0" [group=0]
+		"0_1" [group=1]
+	}
+	subgraph child2 {
+		rank=same
+		"5_0" [group=0]
+		"5_1" [label="juan.1-1" group=1]
+	}
+	"0_0" -> "0_1"
+	"0_0" -> "5_0"
+	"0_1" -> "5_1"
+	"5_1" -> "0_1"
+	"5_0" -> "5_1"
+	"5_1" -> "5_0"
+}
