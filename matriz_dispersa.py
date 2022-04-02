@@ -175,7 +175,7 @@ class MatrizOrtogonal:
         # indexar/apuntar nodo nuevo en indice vertical
         nuevo = self.insertarVertical(nuevo, indiceHorizontal) 
         nuevo = self.insertarHorizontal(nuevo, indiceVertical)
-        print("Nodo insertado...")
+        #print("Nodo insertado...")
         pass
     
     def recorrerMatriz(self):
@@ -213,7 +213,7 @@ class MatrizOrtogonal:
         #vamos bajando en vertical
         while tmpV != None:
             tmpH = tmpV
-
+ 
             #nos vamos a la derecha 
             while tmpH != None:
                 self.graficarFlechas(dot, tmpH)
@@ -227,7 +227,26 @@ class MatrizOrtogonal:
         
         nodo = nodoE
         id = str(nodo.posVertical)+"_"+str(nodo.posHorizontal)
-        grafo.node(id, nodo.dato,group=str(nodo.posHorizontal))
+        color=""
+
+        if nodo.dato == "*":
+            color="black"
+        elif nodo.dato == " ":
+            color = "beige"
+        elif nodo.dato == "E":
+            color= "chartreuse"
+        elif nodo.dato == "C":
+            color= "cornflowerblue"
+        elif nodo.dato == "R":
+            color= "cornsilk4"
+        elif nodo.dato != None:
+            if nodo.dato.isnumeric():
+                color= "firebrick1"
+        
+        
+
+
+        grafo.node(id, nodo.dato,group=str(nodo.posHorizontal),style='filled',fillcolor=color)
         
 
     def graficarFlechas(self, grafo, nodoE):
@@ -256,3 +275,22 @@ class MatrizOrtogonal:
             idAnterior = str(nodo.arriba.posVertical)+"_"+str(nodo.arriba.posHorizontal)
             grafo.edge(idAnterior, id)
         pass
+
+
+class ListaDoble:
+    def __init__(self):
+        #apuntadores
+        self.derecha = None
+        self.izquierda = None
+
+    def agregar(self, dato):
+        nuevoNodo = Nodo(dato)
+       #Validamos si la lista esta vacia
+        if self.derecha == None:
+            self.derecha = nuevoNodo
+            self.izquierda = nuevoNodo
+        #Si por lo menos hay un nodo, insertamos al inicio
+        else:
+            self.derecha.anterior = nuevoNodo
+            nuevoNodo.siguiente = self.derecha
+            self.derecha = nuevoNodo
