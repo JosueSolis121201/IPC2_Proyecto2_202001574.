@@ -3,31 +3,31 @@ digraph G {
 	rankdir=TB
 	subgraph child1 {
 		rank=same
-		"0_0" [fillcolor="" group=0 style=filled]
-		"0_1" [fillcolor="" group=1 style=filled]
-		"0_2" [fillcolor="" group=2 style=filled]
-		"0_3" [fillcolor="" group=3 style=filled]
-		"0_4" [fillcolor="" group=4 style=filled]
-		"0_5" [fillcolor="" group=5 style=filled]
-		"0_6" [fillcolor="" group=6 style=filled]
-		"0_7" [fillcolor="" group=7 style=filled]
-		"0_8" [fillcolor="" group=8 style=filled]
-		"0_9" [fillcolor="" group=9 style=filled]
-		"0_10" [fillcolor="" group=10 style=filled]
-		"0_11" [fillcolor="" group=11 style=filled]
-		"0_12" [fillcolor="" group=12 style=filled]
-		"0_13" [fillcolor="" group=13 style=filled]
-		"0_14" [fillcolor="" group=14 style=filled]
-		"0_15" [fillcolor="" group=15 style=filled]
-		"0_16" [fillcolor="" group=16 style=filled]
-		"0_17" [fillcolor="" group=17 style=filled]
-		"0_18" [fillcolor="" group=18 style=filled]
-		"0_19" [fillcolor="" group=19 style=filled]
-		"0_20" [fillcolor="" group=20 style=filled]
+		"0_0" [fillcolor=white group=0 style=filled]
+		"0_1" [fillcolor=white group=1 style=filled]
+		"0_2" [fillcolor=white group=2 style=filled]
+		"0_3" [fillcolor=white group=3 style=filled]
+		"0_4" [fillcolor=white group=4 style=filled]
+		"0_5" [fillcolor=white group=5 style=filled]
+		"0_6" [fillcolor=white group=6 style=filled]
+		"0_7" [fillcolor=white group=7 style=filled]
+		"0_8" [fillcolor=white group=8 style=filled]
+		"0_9" [fillcolor=white group=9 style=filled]
+		"0_10" [fillcolor=white group=10 style=filled]
+		"0_11" [fillcolor=white group=11 style=filled]
+		"0_12" [fillcolor=white group=12 style=filled]
+		"0_13" [fillcolor=white group=13 style=filled]
+		"0_14" [fillcolor=white group=14 style=filled]
+		"0_15" [fillcolor=white group=15 style=filled]
+		"0_16" [fillcolor=white group=16 style=filled]
+		"0_17" [fillcolor=white group=17 style=filled]
+		"0_18" [fillcolor=white group=18 style=filled]
+		"0_19" [fillcolor=white group=19 style=filled]
+		"0_20" [fillcolor=white group=20 style=filled]
 	}
 	subgraph child2 {
 		rank=same
-		"1_0" [fillcolor="" group=0 style=filled]
+		"1_0" [fillcolor=white group=0 style=filled]
 		"1_1" [label="*" fillcolor=black group=1 style=filled]
 		"1_2" [label="*" fillcolor=black group=2 style=filled]
 		"1_3" [label="*" fillcolor=black group=3 style=filled]
@@ -51,7 +51,7 @@ digraph G {
 	}
 	subgraph child3 {
 		rank=same
-		"2_0" [fillcolor="" group=0 style=filled]
+		"2_0" [fillcolor=white group=0 style=filled]
 		"2_1" [label="*" fillcolor=black group=1 style=filled]
 		"2_2" [label="*" fillcolor=black group=2 style=filled]
 		"2_3" [label="*" fillcolor=black group=3 style=filled]
@@ -75,7 +75,7 @@ digraph G {
 	}
 	subgraph child4 {
 		rank=same
-		"3_0" [fillcolor="" group=0 style=filled]
+		"3_0" [fillcolor=white group=0 style=filled]
 		"3_1" [label="*" fillcolor=black group=1 style=filled]
 		"3_2" [label="*" fillcolor=black group=2 style=filled]
 		"3_3" [label="*" fillcolor=black group=3 style=filled]
@@ -99,7 +99,7 @@ digraph G {
 	}
 	subgraph child5 {
 		rank=same
-		"4_0" [fillcolor="" group=0 style=filled]
+		"4_0" [fillcolor=white group=0 style=filled]
 		"4_1" [label="*" fillcolor=black group=1 style=filled]
 		"4_2" [label="*" fillcolor=black group=2 style=filled]
 		"4_3" [label="*" fillcolor=black group=3 style=filled]
@@ -123,7 +123,7 @@ digraph G {
 	}
 	subgraph child6 {
 		rank=same
-		"5_0" [fillcolor="" group=0 style=filled]
+		"5_0" [fillcolor=white group=0 style=filled]
 		"5_1" [label=E fillcolor=chartreuse group=1 style=filled]
 		"5_2" [label=" " fillcolor=beige group=2 style=filled]
 		"5_3" [label=" " fillcolor=beige group=3 style=filled]
@@ -137,17 +137,17 @@ digraph G {
 		"5_11" [label=" " fillcolor=beige group=11 style=filled]
 		"5_12" [label=" " fillcolor=beige group=12 style=filled]
 		"5_13" [label=" " fillcolor=beige group=13 style=filled]
-		"5_14" [label=" " fillcolor=beige group=14 style=filled]
+		"5_14" [label=20 fillcolor=firebrick1 group=14 style=filled]
 		"5_15" [label=" " fillcolor=beige group=15 style=filled]
 		"5_16" [label=" " fillcolor=beige group=16 style=filled]
 		"5_17" [label=" " fillcolor=beige group=17 style=filled]
 		"5_18" [label=" " fillcolor=beige group=18 style=filled]
-		"5_19" [label=" " fillcolor=beige group=19 style=filled]
-		"5_20" [label=" " fillcolor=beige group=20 style=filled]
+		"5_19" [label=20 fillcolor=firebrick1 group=19 style=filled]
+		"5_20" [label=20 fillcolor=firebrick1 group=20 style=filled]
 	}
 	subgraph child7 {
 		rank=same
-		"6_0" [fillcolor="" group=0 style=filled]
+		"6_0" [fillcolor=white group=0 style=filled]
 		"6_1" [label="*" fillcolor=black group=1 style=filled]
 		"6_2" [label="*" fillcolor=black group=2 style=filled]
 		"6_3" [label="*" fillcolor=black group=3 style=filled]
@@ -171,7 +171,7 @@ digraph G {
 	}
 	subgraph child8 {
 		rank=same
-		"7_0" [fillcolor="" group=0 style=filled]
+		"7_0" [fillcolor=white group=0 style=filled]
 		"7_1" [label="*" fillcolor=black group=1 style=filled]
 		"7_2" [label="*" fillcolor=black group=2 style=filled]
 		"7_3" [label="*" fillcolor=black group=3 style=filled]
@@ -195,7 +195,7 @@ digraph G {
 	}
 	subgraph child9 {
 		rank=same
-		"8_0" [fillcolor="" group=0 style=filled]
+		"8_0" [fillcolor=white group=0 style=filled]
 		"8_1" [label="*" fillcolor=black group=1 style=filled]
 		"8_2" [label=" " fillcolor=beige group=2 style=filled]
 		"8_3" [label=" " fillcolor=beige group=3 style=filled]
@@ -211,7 +211,7 @@ digraph G {
 		"8_13" [label=" " fillcolor=beige group=13 style=filled]
 		"8_14" [label=" " fillcolor=beige group=14 style=filled]
 		"8_15" [label=" " fillcolor=beige group=15 style=filled]
-		"8_16" [label=" " fillcolor=beige group=16 style=filled]
+		"8_16" [label=20 fillcolor=firebrick1 group=16 style=filled]
 		"8_17" [label=" " fillcolor=beige group=17 style=filled]
 		"8_18" [label=" " fillcolor=beige group=18 style=filled]
 		"8_19" [label=" " fillcolor=beige group=19 style=filled]
@@ -219,7 +219,7 @@ digraph G {
 	}
 	subgraph child10 {
 		rank=same
-		"9_0" [fillcolor="" group=0 style=filled]
+		"9_0" [fillcolor=white group=0 style=filled]
 		"9_1" [label="*" fillcolor=black group=1 style=filled]
 		"9_2" [label="*" fillcolor=black group=2 style=filled]
 		"9_3" [label="*" fillcolor=black group=3 style=filled]
@@ -243,7 +243,7 @@ digraph G {
 	}
 	subgraph child11 {
 		rank=same
-		"10_0" [fillcolor="" group=0 style=filled]
+		"10_0" [fillcolor=white group=0 style=filled]
 		"10_1" [label="*" fillcolor=black group=1 style=filled]
 		"10_2" [label="*" fillcolor=black group=2 style=filled]
 		"10_3" [label="*" fillcolor=black group=3 style=filled]
@@ -267,14 +267,14 @@ digraph G {
 	}
 	subgraph child12 {
 		rank=same
-		"11_0" [fillcolor="" group=0 style=filled]
+		"11_0" [fillcolor=white group=0 style=filled]
 		"11_1" [label="*" fillcolor=black group=1 style=filled]
 		"11_2" [label="*" fillcolor=black group=2 style=filled]
 		"11_3" [label="*" fillcolor=black group=3 style=filled]
 		"11_4" [label=" " fillcolor=beige group=4 style=filled]
 		"11_5" [label=" " fillcolor=beige group=5 style=filled]
 		"11_6" [label=" " fillcolor=beige group=6 style=filled]
-		"11_7" [label=" " fillcolor=beige group=7 style=filled]
+		"11_7" [label=20 fillcolor=firebrick1 group=7 style=filled]
 		"11_8" [label=" " fillcolor=beige group=8 style=filled]
 		"11_9" [label=" " fillcolor=beige group=9 style=filled]
 		"11_10" [label=" " fillcolor=beige group=10 style=filled]
@@ -282,7 +282,7 @@ digraph G {
 		"11_12" [label=" " fillcolor=beige group=12 style=filled]
 		"11_13" [label=" " fillcolor=beige group=13 style=filled]
 		"11_14" [label=" " fillcolor=beige group=14 style=filled]
-		"11_15" [label=" " fillcolor=beige group=15 style=filled]
+		"11_15" [label=20 fillcolor=firebrick1 group=15 style=filled]
 		"11_16" [label=" " fillcolor=beige group=16 style=filled]
 		"11_17" [label=" " fillcolor=beige group=17 style=filled]
 		"11_18" [label=" " fillcolor=beige group=18 style=filled]
@@ -291,7 +291,7 @@ digraph G {
 	}
 	subgraph child13 {
 		rank=same
-		"12_0" [fillcolor="" group=0 style=filled]
+		"12_0" [fillcolor=white group=0 style=filled]
 		"12_1" [label="*" fillcolor=black group=1 style=filled]
 		"12_2" [label="*" fillcolor=black group=2 style=filled]
 		"12_3" [label="*" fillcolor=black group=3 style=filled]
@@ -315,7 +315,7 @@ digraph G {
 	}
 	subgraph child14 {
 		rank=same
-		"13_0" [fillcolor="" group=0 style=filled]
+		"13_0" [fillcolor=white group=0 style=filled]
 		"13_1" [label="*" fillcolor=black group=1 style=filled]
 		"13_2" [label="*" fillcolor=black group=2 style=filled]
 		"13_3" [label="*" fillcolor=black group=3 style=filled]
@@ -339,7 +339,7 @@ digraph G {
 	}
 	subgraph child15 {
 		rank=same
-		"14_0" [fillcolor="" group=0 style=filled]
+		"14_0" [fillcolor=white group=0 style=filled]
 		"14_1" [label="*" fillcolor=black group=1 style=filled]
 		"14_2" [label="*" fillcolor=black group=2 style=filled]
 		"14_3" [label="*" fillcolor=black group=3 style=filled]
@@ -349,7 +349,7 @@ digraph G {
 		"14_7" [label="*" fillcolor=black group=7 style=filled]
 		"14_8" [label="*" fillcolor=black group=8 style=filled]
 		"14_9" [label="*" fillcolor=black group=9 style=filled]
-		"14_10" [label=" " fillcolor=beige group=10 style=filled]
+		"14_10" [label=20 fillcolor=firebrick1 group=10 style=filled]
 		"14_11" [label=" " fillcolor=beige group=11 style=filled]
 		"14_12" [label=" " fillcolor=beige group=12 style=filled]
 		"14_13" [label=" " fillcolor=beige group=13 style=filled]
@@ -363,7 +363,7 @@ digraph G {
 	}
 	subgraph child16 {
 		rank=same
-		"15_0" [fillcolor="" group=0 style=filled]
+		"15_0" [fillcolor=white group=0 style=filled]
 		"15_1" [label="*" fillcolor=black group=1 style=filled]
 		"15_2" [label="*" fillcolor=black group=2 style=filled]
 		"15_3" [label="*" fillcolor=black group=3 style=filled]

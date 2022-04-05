@@ -12,13 +12,13 @@
 <!-- 0_0 -->
 <g id="node1" class="node">
 <title>0_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-1116 0,-1116 0,-1080 54,-1080 54,-1116"/>
+<polygon fill="white" stroke="black" points="54,-1116 0,-1116 0,-1080 54,-1080 54,-1116"/>
 <text text-anchor="middle" x="27" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_0</text>
 </g>
 <!-- 0_1 -->
 <g id="node2" class="node">
 <title>0_1</title>
-<polygon fill="lightgrey" stroke="black" points="126,-1116 72,-1116 72,-1080 126,-1080 126,-1116"/>
+<polygon fill="white" stroke="black" points="126,-1116 72,-1116 72,-1080 126,-1080 126,-1116"/>
 <text text-anchor="middle" x="99" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_1</text>
 </g>
 <!-- 0_0&#45;&gt;0_1 -->
@@ -30,7 +30,7 @@
 <!-- 1_0 -->
 <g id="node22" class="node">
 <title>1_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-1044 0,-1044 0,-1008 54,-1008 54,-1044"/>
+<polygon fill="white" stroke="black" points="54,-1044 0,-1044 0,-1008 54,-1008 54,-1044"/>
 <text text-anchor="middle" x="27" y="-1022.3" font-family="Times New Roman,serif" font-size="14.00">1_0</text>
 </g>
 <!-- 0_0&#45;&gt;1_0 -->
@@ -42,7 +42,7 @@
 <!-- 0_2 -->
 <g id="node3" class="node">
 <title>0_2</title>
-<polygon fill="lightgrey" stroke="black" points="198,-1116 144,-1116 144,-1080 198,-1080 198,-1116"/>
+<polygon fill="white" stroke="black" points="198,-1116 144,-1116 144,-1080 198,-1080 198,-1116"/>
 <text text-anchor="middle" x="171" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_2</text>
 </g>
 <!-- 0_1&#45;&gt;0_2 -->
@@ -66,7 +66,7 @@
 <!-- 0_3 -->
 <g id="node4" class="node">
 <title>0_3</title>
-<polygon fill="lightgrey" stroke="black" points="270,-1116 216,-1116 216,-1080 270,-1080 270,-1116"/>
+<polygon fill="white" stroke="black" points="270,-1116 216,-1116 216,-1080 270,-1080 270,-1116"/>
 <text text-anchor="middle" x="243" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_3</text>
 </g>
 <!-- 0_2&#45;&gt;0_3 -->
@@ -90,7 +90,7 @@
 <!-- 0_4 -->
 <g id="node5" class="node">
 <title>0_4</title>
-<polygon fill="lightgrey" stroke="black" points="342,-1116 288,-1116 288,-1080 342,-1080 342,-1116"/>
+<polygon fill="white" stroke="black" points="342,-1116 288,-1116 288,-1080 342,-1080 342,-1116"/>
 <text text-anchor="middle" x="315" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_4</text>
 </g>
 <!-- 0_3&#45;&gt;0_4 -->
@@ -114,7 +114,7 @@
 <!-- 0_5 -->
 <g id="node6" class="node">
 <title>0_5</title>
-<polygon fill="lightgrey" stroke="black" points="414,-1116 360,-1116 360,-1080 414,-1080 414,-1116"/>
+<polygon fill="white" stroke="black" points="414,-1116 360,-1116 360,-1080 414,-1080 414,-1116"/>
 <text text-anchor="middle" x="387" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_5</text>
 </g>
 <!-- 0_4&#45;&gt;0_5 -->
@@ -138,7 +138,7 @@
 <!-- 0_6 -->
 <g id="node7" class="node">
 <title>0_6</title>
-<polygon fill="lightgrey" stroke="black" points="486,-1116 432,-1116 432,-1080 486,-1080 486,-1116"/>
+<polygon fill="white" stroke="black" points="486,-1116 432,-1116 432,-1080 486,-1080 486,-1116"/>
 <text text-anchor="middle" x="459" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_6</text>
 </g>
 <!-- 0_5&#45;&gt;0_6 -->
@@ -162,7 +162,7 @@
 <!-- 0_7 -->
 <g id="node8" class="node">
 <title>0_7</title>
-<polygon fill="lightgrey" stroke="black" points="558,-1116 504,-1116 504,-1080 558,-1080 558,-1116"/>
+<polygon fill="white" stroke="black" points="558,-1116 504,-1116 504,-1080 558,-1080 558,-1116"/>
 <text text-anchor="middle" x="531" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_7</text>
 </g>
 <!-- 0_6&#45;&gt;0_7 -->
@@ -186,7 +186,7 @@
 <!-- 0_8 -->
 <g id="node9" class="node">
 <title>0_8</title>
-<polygon fill="lightgrey" stroke="black" points="630,-1116 576,-1116 576,-1080 630,-1080 630,-1116"/>
+<polygon fill="white" stroke="black" points="630,-1116 576,-1116 576,-1080 630,-1080 630,-1116"/>
 <text text-anchor="middle" x="603" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_8</text>
 </g>
 <!-- 0_7&#45;&gt;0_8 -->
@@ -210,7 +210,7 @@
 <!-- 0_9 -->
 <g id="node10" class="node">
 <title>0_9</title>
-<polygon fill="lightgrey" stroke="black" points="702,-1116 648,-1116 648,-1080 702,-1080 702,-1116"/>
+<polygon fill="white" stroke="black" points="702,-1116 648,-1116 648,-1080 702,-1080 702,-1116"/>
 <text text-anchor="middle" x="675" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_9</text>
 </g>
 <!-- 0_8&#45;&gt;0_9 -->
@@ -234,7 +234,7 @@
 <!-- 0_10 -->
 <g id="node11" class="node">
 <title>0_10</title>
-<polygon fill="lightgrey" stroke="black" points="774,-1116 720,-1116 720,-1080 774,-1080 774,-1116"/>
+<polygon fill="white" stroke="black" points="774,-1116 720,-1116 720,-1080 774,-1080 774,-1116"/>
 <text text-anchor="middle" x="747" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_10</text>
 </g>
 <!-- 0_9&#45;&gt;0_10 -->
@@ -258,7 +258,7 @@
 <!-- 0_11 -->
 <g id="node12" class="node">
 <title>0_11</title>
-<polygon fill="lightgrey" stroke="black" points="846,-1116 792,-1116 792,-1080 846,-1080 846,-1116"/>
+<polygon fill="white" stroke="black" points="846,-1116 792,-1116 792,-1080 846,-1080 846,-1116"/>
 <text text-anchor="middle" x="819" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_11</text>
 </g>
 <!-- 0_10&#45;&gt;0_11 -->
@@ -282,7 +282,7 @@
 <!-- 0_12 -->
 <g id="node13" class="node">
 <title>0_12</title>
-<polygon fill="lightgrey" stroke="black" points="918,-1116 864,-1116 864,-1080 918,-1080 918,-1116"/>
+<polygon fill="white" stroke="black" points="918,-1116 864,-1116 864,-1080 918,-1080 918,-1116"/>
 <text text-anchor="middle" x="891" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_12</text>
 </g>
 <!-- 0_11&#45;&gt;0_12 -->
@@ -306,7 +306,7 @@
 <!-- 0_13 -->
 <g id="node14" class="node">
 <title>0_13</title>
-<polygon fill="lightgrey" stroke="black" points="990,-1116 936,-1116 936,-1080 990,-1080 990,-1116"/>
+<polygon fill="white" stroke="black" points="990,-1116 936,-1116 936,-1080 990,-1080 990,-1116"/>
 <text text-anchor="middle" x="963" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_13</text>
 </g>
 <!-- 0_12&#45;&gt;0_13 -->
@@ -330,7 +330,7 @@
 <!-- 0_14 -->
 <g id="node15" class="node">
 <title>0_14</title>
-<polygon fill="lightgrey" stroke="black" points="1062,-1116 1008,-1116 1008,-1080 1062,-1080 1062,-1116"/>
+<polygon fill="white" stroke="black" points="1062,-1116 1008,-1116 1008,-1080 1062,-1080 1062,-1116"/>
 <text text-anchor="middle" x="1035" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_14</text>
 </g>
 <!-- 0_13&#45;&gt;0_14 -->
@@ -354,7 +354,7 @@
 <!-- 0_15 -->
 <g id="node16" class="node">
 <title>0_15</title>
-<polygon fill="lightgrey" stroke="black" points="1134,-1116 1080,-1116 1080,-1080 1134,-1080 1134,-1116"/>
+<polygon fill="white" stroke="black" points="1134,-1116 1080,-1116 1080,-1080 1134,-1080 1134,-1116"/>
 <text text-anchor="middle" x="1107" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_15</text>
 </g>
 <!-- 0_14&#45;&gt;0_15 -->
@@ -378,7 +378,7 @@
 <!-- 0_16 -->
 <g id="node17" class="node">
 <title>0_16</title>
-<polygon fill="lightgrey" stroke="black" points="1206,-1116 1152,-1116 1152,-1080 1206,-1080 1206,-1116"/>
+<polygon fill="white" stroke="black" points="1206,-1116 1152,-1116 1152,-1080 1206,-1080 1206,-1116"/>
 <text text-anchor="middle" x="1179" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_16</text>
 </g>
 <!-- 0_15&#45;&gt;0_16 -->
@@ -402,7 +402,7 @@
 <!-- 0_17 -->
 <g id="node18" class="node">
 <title>0_17</title>
-<polygon fill="lightgrey" stroke="black" points="1278,-1116 1224,-1116 1224,-1080 1278,-1080 1278,-1116"/>
+<polygon fill="white" stroke="black" points="1278,-1116 1224,-1116 1224,-1080 1278,-1080 1278,-1116"/>
 <text text-anchor="middle" x="1251" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_17</text>
 </g>
 <!-- 0_16&#45;&gt;0_17 -->
@@ -426,7 +426,7 @@
 <!-- 0_18 -->
 <g id="node19" class="node">
 <title>0_18</title>
-<polygon fill="lightgrey" stroke="black" points="1350,-1116 1296,-1116 1296,-1080 1350,-1080 1350,-1116"/>
+<polygon fill="white" stroke="black" points="1350,-1116 1296,-1116 1296,-1080 1350,-1080 1350,-1116"/>
 <text text-anchor="middle" x="1323" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_18</text>
 </g>
 <!-- 0_17&#45;&gt;0_18 -->
@@ -450,7 +450,7 @@
 <!-- 0_19 -->
 <g id="node20" class="node">
 <title>0_19</title>
-<polygon fill="lightgrey" stroke="black" points="1422,-1116 1368,-1116 1368,-1080 1422,-1080 1422,-1116"/>
+<polygon fill="white" stroke="black" points="1422,-1116 1368,-1116 1368,-1080 1422,-1080 1422,-1116"/>
 <text text-anchor="middle" x="1395" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_19</text>
 </g>
 <!-- 0_18&#45;&gt;0_19 -->
@@ -474,7 +474,7 @@
 <!-- 0_20 -->
 <g id="node21" class="node">
 <title>0_20</title>
-<polygon fill="lightgrey" stroke="black" points="1494,-1116 1440,-1116 1440,-1080 1494,-1080 1494,-1116"/>
+<polygon fill="white" stroke="black" points="1494,-1116 1440,-1116 1440,-1080 1494,-1080 1494,-1116"/>
 <text text-anchor="middle" x="1467" y="-1094.3" font-family="Times New Roman,serif" font-size="14.00">0_20</text>
 </g>
 <!-- 0_19&#45;&gt;0_20 -->
@@ -516,7 +516,7 @@
 <!-- 2_0 -->
 <g id="node43" class="node">
 <title>2_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-972 0,-972 0,-936 54,-936 54,-972"/>
+<polygon fill="white" stroke="black" points="54,-972 0,-972 0,-936 54,-936 54,-972"/>
 <text text-anchor="middle" x="27" y="-950.3" font-family="Times New Roman,serif" font-size="14.00">2_0</text>
 </g>
 <!-- 1_0&#45;&gt;2_0 -->
@@ -1128,7 +1128,7 @@
 <!-- 3_0 -->
 <g id="node64" class="node">
 <title>3_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-900 0,-900 0,-864 54,-864 54,-900"/>
+<polygon fill="white" stroke="black" points="54,-900 0,-900 0,-864 54,-864 54,-900"/>
 <text text-anchor="middle" x="27" y="-878.3" font-family="Times New Roman,serif" font-size="14.00">3_0</text>
 </g>
 <!-- 2_0&#45;&gt;3_0 -->
@@ -1740,7 +1740,7 @@
 <!-- 4_0 -->
 <g id="node85" class="node">
 <title>4_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-828 0,-828 0,-792 54,-792 54,-828"/>
+<polygon fill="white" stroke="black" points="54,-828 0,-828 0,-792 54,-792 54,-828"/>
 <text text-anchor="middle" x="27" y="-806.3" font-family="Times New Roman,serif" font-size="14.00">4_0</text>
 </g>
 <!-- 3_0&#45;&gt;4_0 -->
@@ -2352,7 +2352,7 @@
 <!-- 5_0 -->
 <g id="node106" class="node">
 <title>5_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-756 0,-756 0,-720 54,-720 54,-756"/>
+<polygon fill="white" stroke="black" points="54,-756 0,-756 0,-720 54,-720 54,-756"/>
 <text text-anchor="middle" x="27" y="-734.3" font-family="Times New Roman,serif" font-size="14.00">5_0</text>
 </g>
 <!-- 4_0&#45;&gt;5_0 -->
@@ -2772,8 +2772,8 @@
 <!-- 5_14 -->
 <g id="node120" class="node">
 <title>5_14</title>
-<polygon fill="beige" stroke="black" points="1062,-756 1008,-756 1008,-720 1062,-720 1062,-756"/>
-<text text-anchor="middle" x="1035" y="-734.3" font-family="Times New Roman,serif" font-size="14.00"> </text>
+<polygon fill="#ff3030" stroke="black" points="1062,-756 1008,-756 1008,-720 1062,-720 1062,-756"/>
+<text text-anchor="middle" x="1035" y="-734.3" font-family="Times New Roman,serif" font-size="14.00">20</text>
 </g>
 <!-- 4_14&#45;&gt;5_14 -->
 <g id="edge398" class="edge">
@@ -2922,8 +2922,8 @@
 <!-- 5_19 -->
 <g id="node125" class="node">
 <title>5_19</title>
-<polygon fill="beige" stroke="black" points="1422,-756 1368,-756 1368,-720 1422,-720 1422,-756"/>
-<text text-anchor="middle" x="1395" y="-734.3" font-family="Times New Roman,serif" font-size="14.00"> </text>
+<polygon fill="#ff3030" stroke="black" points="1422,-756 1368,-756 1368,-720 1422,-720 1422,-756"/>
+<text text-anchor="middle" x="1395" y="-734.3" font-family="Times New Roman,serif" font-size="14.00">20</text>
 </g>
 <!-- 4_19&#45;&gt;5_19 -->
 <g id="edge418" class="edge">
@@ -2946,8 +2946,8 @@
 <!-- 5_20 -->
 <g id="node126" class="node">
 <title>5_20</title>
-<polygon fill="beige" stroke="black" points="1494,-756 1440,-756 1440,-720 1494,-720 1494,-756"/>
-<text text-anchor="middle" x="1467" y="-734.3" font-family="Times New Roman,serif" font-size="14.00"> </text>
+<polygon fill="#ff3030" stroke="black" points="1494,-756 1440,-756 1440,-720 1494,-720 1494,-756"/>
+<text text-anchor="middle" x="1467" y="-734.3" font-family="Times New Roman,serif" font-size="14.00">20</text>
 </g>
 <!-- 4_20&#45;&gt;5_20 -->
 <g id="edge422" class="edge">
@@ -2964,7 +2964,7 @@
 <!-- 6_0 -->
 <g id="node127" class="node">
 <title>6_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-684 0,-684 0,-648 54,-648 54,-684"/>
+<polygon fill="white" stroke="black" points="54,-684 0,-684 0,-648 54,-648 54,-684"/>
 <text text-anchor="middle" x="27" y="-662.3" font-family="Times New Roman,serif" font-size="14.00">6_0</text>
 </g>
 <!-- 5_0&#45;&gt;6_0 -->
@@ -3576,7 +3576,7 @@
 <!-- 7_0 -->
 <g id="node148" class="node">
 <title>7_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-612 0,-612 0,-576 54,-576 54,-612"/>
+<polygon fill="white" stroke="black" points="54,-612 0,-612 0,-576 54,-576 54,-612"/>
 <text text-anchor="middle" x="27" y="-590.3" font-family="Times New Roman,serif" font-size="14.00">7_0</text>
 </g>
 <!-- 6_0&#45;&gt;7_0 -->
@@ -4188,7 +4188,7 @@
 <!-- 8_0 -->
 <g id="node169" class="node">
 <title>8_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-540 0,-540 0,-504 54,-504 54,-540"/>
+<polygon fill="white" stroke="black" points="54,-540 0,-540 0,-504 54,-504 54,-540"/>
 <text text-anchor="middle" x="27" y="-518.3" font-family="Times New Roman,serif" font-size="14.00">8_0</text>
 </g>
 <!-- 7_0&#45;&gt;8_0 -->
@@ -4668,8 +4668,8 @@
 <!-- 8_16 -->
 <g id="node185" class="node">
 <title>8_16</title>
-<polygon fill="beige" stroke="black" points="1206,-540 1152,-540 1152,-504 1206,-504 1206,-540"/>
-<text text-anchor="middle" x="1179" y="-518.3" font-family="Times New Roman,serif" font-size="14.00"> </text>
+<polygon fill="#ff3030" stroke="black" points="1206,-540 1152,-540 1152,-504 1206,-504 1206,-540"/>
+<text text-anchor="middle" x="1179" y="-518.3" font-family="Times New Roman,serif" font-size="14.00">20</text>
 </g>
 <!-- 7_16&#45;&gt;8_16 -->
 <g id="edge649" class="edge">
@@ -4800,7 +4800,7 @@
 <!-- 9_0 -->
 <g id="node190" class="node">
 <title>9_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-468 0,-468 0,-432 54,-432 54,-468"/>
+<polygon fill="white" stroke="black" points="54,-468 0,-468 0,-432 54,-432 54,-468"/>
 <text text-anchor="middle" x="27" y="-446.3" font-family="Times New Roman,serif" font-size="14.00">9_0</text>
 </g>
 <!-- 8_0&#45;&gt;9_0 -->
@@ -5412,7 +5412,7 @@
 <!-- 10_0 -->
 <g id="node211" class="node">
 <title>10_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-396 0,-396 0,-360 54,-360 54,-396"/>
+<polygon fill="white" stroke="black" points="54,-396 0,-396 0,-360 54,-360 54,-396"/>
 <text text-anchor="middle" x="27" y="-374.3" font-family="Times New Roman,serif" font-size="14.00">10_0</text>
 </g>
 <!-- 9_0&#45;&gt;10_0 -->
@@ -6024,7 +6024,7 @@
 <!-- 11_0 -->
 <g id="node232" class="node">
 <title>11_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-324 0,-324 0,-288 54,-288 54,-324"/>
+<polygon fill="white" stroke="black" points="54,-324 0,-324 0,-288 54,-288 54,-324"/>
 <text text-anchor="middle" x="27" y="-302.3" font-family="Times New Roman,serif" font-size="14.00">11_0</text>
 </g>
 <!-- 10_0&#45;&gt;11_0 -->
@@ -6234,8 +6234,8 @@
 <!-- 11_7 -->
 <g id="node239" class="node">
 <title>11_7</title>
-<polygon fill="beige" stroke="black" points="558,-324 504,-324 504,-288 558,-288 558,-324"/>
-<text text-anchor="middle" x="531" y="-302.3" font-family="Times New Roman,serif" font-size="14.00"> </text>
+<polygon fill="#ff3030" stroke="black" points="558,-324 504,-324 504,-288 558,-288 558,-324"/>
+<text text-anchor="middle" x="531" y="-302.3" font-family="Times New Roman,serif" font-size="14.00">20</text>
 </g>
 <!-- 10_7&#45;&gt;11_7 -->
 <g id="edge856" class="edge">
@@ -6474,8 +6474,8 @@
 <!-- 11_15 -->
 <g id="node247" class="node">
 <title>11_15</title>
-<polygon fill="beige" stroke="black" points="1134,-324 1080,-324 1080,-288 1134,-288 1134,-324"/>
-<text text-anchor="middle" x="1107" y="-302.3" font-family="Times New Roman,serif" font-size="14.00"> </text>
+<polygon fill="#ff3030" stroke="black" points="1134,-324 1080,-324 1080,-288 1134,-288 1134,-324"/>
+<text text-anchor="middle" x="1107" y="-302.3" font-family="Times New Roman,serif" font-size="14.00">20</text>
 </g>
 <!-- 10_15&#45;&gt;11_15 -->
 <g id="edge888" class="edge">
@@ -6636,7 +6636,7 @@
 <!-- 12_0 -->
 <g id="node253" class="node">
 <title>12_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-252 0,-252 0,-216 54,-216 54,-252"/>
+<polygon fill="white" stroke="black" points="54,-252 0,-252 0,-216 54,-216 54,-252"/>
 <text text-anchor="middle" x="27" y="-230.3" font-family="Times New Roman,serif" font-size="14.00">12_0</text>
 </g>
 <!-- 11_0&#45;&gt;12_0 -->
@@ -7248,7 +7248,7 @@
 <!-- 13_0 -->
 <g id="node274" class="node">
 <title>13_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-180 0,-180 0,-144 54,-144 54,-180"/>
+<polygon fill="white" stroke="black" points="54,-180 0,-180 0,-144 54,-144 54,-180"/>
 <text text-anchor="middle" x="27" y="-158.3" font-family="Times New Roman,serif" font-size="14.00">13_0</text>
 </g>
 <!-- 12_0&#45;&gt;13_0 -->
@@ -7860,7 +7860,7 @@
 <!-- 14_0 -->
 <g id="node295" class="node">
 <title>14_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-108 0,-108 0,-72 54,-72 54,-108"/>
+<polygon fill="white" stroke="black" points="54,-108 0,-108 0,-72 54,-72 54,-108"/>
 <text text-anchor="middle" x="27" y="-86.3" font-family="Times New Roman,serif" font-size="14.00">14_0</text>
 </g>
 <!-- 13_0&#45;&gt;14_0 -->
@@ -8160,8 +8160,8 @@
 <!-- 14_10 -->
 <g id="node305" class="node">
 <title>14_10</title>
-<polygon fill="beige" stroke="black" points="774,-108 720,-108 720,-72 774,-72 774,-108"/>
-<text text-anchor="middle" x="747" y="-86.3" font-family="Times New Roman,serif" font-size="14.00"> </text>
+<polygon fill="#ff3030" stroke="black" points="774,-108 720,-108 720,-72 774,-72 774,-108"/>
+<text text-anchor="middle" x="747" y="-86.3" font-family="Times New Roman,serif" font-size="14.00">20</text>
 </g>
 <!-- 13_10&#45;&gt;14_10 -->
 <g id="edge1111" class="edge">
@@ -8472,7 +8472,7 @@
 <!-- 15_0 -->
 <g id="node316" class="node">
 <title>15_0</title>
-<polygon fill="lightgrey" stroke="black" points="54,-36 0,-36 0,0 54,0 54,-36"/>
+<polygon fill="white" stroke="black" points="54,-36 0,-36 0,0 54,0 54,-36"/>
 <text text-anchor="middle" x="27" y="-14.3" font-family="Times New Roman,serif" font-size="14.00">15_0</text>
 </g>
 <!-- 14_0&#45;&gt;15_0 -->

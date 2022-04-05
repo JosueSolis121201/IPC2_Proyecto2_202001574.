@@ -1,3 +1,4 @@
+from os import sep
 from xml.dom import minidom
 from tkinter import Tk                               #Libreria para explorador de archivos (Se usara para leer data e instrucciones)
 from tkinter.filedialog import askopenfilename
@@ -37,16 +38,17 @@ class lectura():
 
     def analizarXML(self):
         doc = minidom.parseString(self.leerXML())
-        ciudad = doc.getElementsByTagName("ciudad")
+        ciudades = doc.getElementsByTagName("ciudad")
         robot = doc.getElementsByTagName("robot")
         matrizOrtogonal = MatrizOrtogonal()
 
         #ciudades
-        for ciudad in ciudad:
+        for ciudad in ciudades:
+            matrizOrtogonal = MatrizOrtogonal()
             x=0
-            nombre = ciudad.getElementsByTagName("nombre")
+            nombres = ciudad.getElementsByTagName("nombre")
             #ID coluimna y fila
-            for nombre in nombre:
+            for nombre in nombres:
                 nombre_ciudad = ciudad.getElementsByTagName("nombre")[0].firstChild.data     
                 IDfilas  = nombre.getAttribute("filas")
                 IDcolumnas  = nombre.getAttribute("columnas")
@@ -68,11 +70,8 @@ class lectura():
                     matrizOrtogonal.insertarDato(str(letra),int(y),int(contador_letra)) 
                     contador_letra = contador_letra +  1
                 x=x+1
-                print("num_fila:%s" % fila_num +"fila_texto:%s" % fila_texto )   
-            matrizOrtogonal.recorrerMatriz()
-                
-                
-            # robots enemigos
+                print("num_fila:%s" % fila_num +"fila_texto:%s" % fila_texto )
+
             unidad_militar = ciudad.getElementsByTagName("unidadMilitar")
             for unidad_militar in unidad_militar:
                 unidad_militar_vida = ciudad.getElementsByTagName("unidadMilitar")[0].firstChild.data     
@@ -84,6 +83,18 @@ class lectura():
                 """print("unidad_militar_vida:%s" % unidad_militar_vida)
                 print("unidad_militar_posFila:%s" % unidad_militar_posFila)
                 print("unidad_militar_poscolumna:%s" % unidad_militar_poscolumna)"""
+        
+            self.lista.agregar(matrizOrtogonal)
+            matrizOrtogonal.recorrerMatriz()
+            matrizOrtogonal.Entradas()
+            matrizOrtogonal.posPorEntrada()
+        
+        
+            
+                
+                
+            # robots enemigos
+           
 
 
         #robots aliados

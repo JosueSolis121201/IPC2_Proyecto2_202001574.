@@ -1,8 +1,8 @@
 from graphviz import Digraph
 
 class Nodo:
-    def __init__(self):
-        self.dato = None
+    def __init__(self,dato=None):
+        self.dato = dato
         #Coordenadas
         self.posVertical = None
         self.posHorizontal =None
@@ -11,6 +11,7 @@ class Nodo:
         self.izquierda = None
         self.arriba = None
         self.abajo = None
+        
 
 class MatrizOrtogonal:
     def __init__(self):
@@ -18,6 +19,12 @@ class MatrizOrtogonal:
         self.raiz = Nodo()
         self.raiz.posVertical = 0
         self.raiz.posHorizontal = 0
+        #---------------------------------------
+        self.contador_Entrada=0
+        self.contador_civil=0
+        self.posVertical_Entrada=0
+        self.posHorizontal_Entrada=0
+        
 
     def crearIndiceVertical(self, pos):
         # recorrer todos los nodos de manera vertical
@@ -179,9 +186,7 @@ class MatrizOrtogonal:
         pass
     
     def recorrerMatriz(self):
-        print("Graficando lista...")
-        
-        dot = Digraph('G', filename='dot', engine='dot',format='svg')
+        dot = Digraph('G', filename='dot'+str(id(self)), engine='dot',format='svg')
         dot.node_attr.update(shape="box")
         dot.attr(rankdir = "TB")
         contSubgrap = 1
@@ -222,12 +227,65 @@ class MatrizOrtogonal:
             tmpV = tmpV.abajo
         dot.view()
         pass
+    
+
+    def Entradas (self):
+        tmpV = self.raiz
+
+        #vamos bajando en vertical
+        while tmpV != None:
+            tmpH = tmpV
+            #nos vamos a la derecha 
+            while tmpH != None:
+                if tmpH.dato == "E":
+                    self.contador_Entrada=self.contador_Entrada+1
+                    print("Entrada : " +str(self.contador_Entrada)+ ", enla posicion : X" +str(self.posHorizontal_Entrada) +", Y"+str(self.posVertical_Entrada))
+                if tmpH.dato == "C":
+                    self.contador_civil=self.contador_civil+1
+                    print("Civil : " +str(self.contador_civil)+ ", enla posicion : X" +str(self.posHorizontal_Entrada) +", Y"+str(self.posVertical_Entrada))
+
+                self.posHorizontal_Entrada=self.posHorizontal_Entrada+1
+                tmpH = tmpH.derecha
+            self.posHorizontal_Entrada =0
+            self.posVertical_Entrada=self.posVertical_Entrada+1
+            tmpV = tmpV.abajo
+
+    def posPorEntrada(self):
+        tmpV = self.raiz
+        print("Seleccione una entrada")
+        posX= input("Numero en posicion Horizontal/X:")
+        posY= input("Numero en posicion vertical/Y:")
+        print(tmpV.posVertical,tmpV.posHorizontal,posY,sep=" ---- ")
+        
+        print(tmpV.posVertical)
+        print(posY)
+        while tmpV.abajo and tmpV.posVertical <= int(posY):
+            tmpH = tmpV
+            while tmpH.derecha and  tmpH.posHorizontal <= int(posX):
+                self.algoritmo()
+                tmpH = tmpH.derecha
+            tmpV = tmpV.abajo
+    
+    def algoritmo (self):
+        print("ChapinRescue, ChapinFighter ")
+        x=input("Escriba el tipo de operacion")
+        #chapinrescure, caracteristicas: Inicia punto de entrada llegar hasta unidad civil no puede pelear
+        if x.lower() ==  "chapinrescue":
+            pass
+            
+            
+
+
+
+
+        
+
 
     def graficarNodos(self, grafo, nodoE):
         
         nodo = nodoE
         id = str(nodo.posVertical)+"_"+str(nodo.posHorizontal)
-        color=""
+        color="white"
 
         if nodo.dato == "*":
             color="black"
@@ -242,12 +300,12 @@ class MatrizOrtogonal:
         elif nodo.dato != None:
             if nodo.dato.isnumeric():
                 color= "firebrick1"
+
         
         
 
 
         grafo.node(id, nodo.dato,group=str(nodo.posHorizontal),style='filled',fillcolor=color)
-        
 
     def graficarFlechas(self, grafo, nodoE):
         nodo = nodoE
@@ -275,7 +333,6 @@ class MatrizOrtogonal:
             idAnterior = str(nodo.arriba.posVertical)+"_"+str(nodo.arriba.posHorizontal)
             grafo.edge(idAnterior, id)
         pass
-
 
 class ListaDoble:
     def __init__(self):
