@@ -1,3 +1,5 @@
+from os import sep
+from xml.etree.ElementTree import tostring
 from graphviz import Digraph
 
 class Nodo:
@@ -11,6 +13,11 @@ class Nodo:
         self.izquierda = None
         self.arriba = None
         self.abajo = None
+        #valores
+        self.tiene_camino = False
+        self.direccion_camino = None
+
+        self.pintar_camino = False
         
 
 class MatrizOrtogonal:
@@ -229,6 +236,7 @@ class MatrizOrtogonal:
         pass
     
 
+    
     def Entradas (self):
         tmpV = self.raiz
 
@@ -250,31 +258,191 @@ class MatrizOrtogonal:
             self.posVertical_Entrada=self.posVertical_Entrada+1
             tmpV = tmpV.abajo
 
-    def posPorEntrada(self):
+    
+
+
+    def posPorEntrada_1(self):
+        
         tmpV = self.raiz
         print("Seleccione una entrada")
-        posX= input("Numero en posicion Horizontal/X:")
-        posY= input("Numero en posicion vertical/Y:")
+        posX= int(input("Numero en posicion Horizontal/X:"))
+        posY= int(input("Numero en posicion vertical/Y:"))
         print(tmpV.posVertical,tmpV.posHorizontal,posY,sep=" ---- ")
-        
-        print(tmpV.posVertical)
-        print(posY)
+
+        print("Seleccione un Civil")
+        posXCivil=int(input("Numero en posicion Horizontal/X:"))
+        posYCivil=int(input("Numero en posicion vertical/Y:"))
+        self.algoritmo(posXCivil,posYCivil)
+
         while tmpV.abajo and tmpV.posVertical <= int(posY):
             tmpH = tmpV
             while tmpH.derecha and  tmpH.posHorizontal <= int(posX):
-                self.algoritmo()
+                if(tmpH.posHorizontal == posX and tmpH.posVertical == posY):
+                    nodoActual = tmpH
+                    print("dato",tmpH.dato,"tiene camino",tmpH.tiene_camino,sep=" --- ")
+                    if tmpH.tiene_camino  == True:
+                        print("se encontro camino posible")
+                    else:
+                        print("No se encontro camino posible")
+ 
+                    if(tmpH.tiene_camino):
+                        while nodoActual and not ((posYCivil == nodoActual.posVertical) and (posXCivil == nodoActual.posHorizontal)):
+                            nodoActual.pintar_camino = True
+
+                            if nodoActual.direccion_camino == "Derecha":
+                                nodoActual = nodoActual.derecha
+                                print("Se movio hacia la Derecha")
+                            elif nodoActual.direccion_camino == "Izquierda":
+                                nodoActual = nodoActual.izquierda
+                                print("Se movio hacia la Izquierda")
+                            elif nodoActual.direccion_camino == "Arriba":
+                                nodoActual = nodoActual.arriba
+                                print("Se movio hacia la Arriba")
+                            elif nodoActual.direccion_camino == "Abajo":
+                                nodoActual = nodoActual.abajo
+                                print("Se movio hacia la Abajo")
+                    
+                        print("fin",nodoActual.posHorizontal,nodoActual.posVertical,"original",posXCivil,posYCivil,sep=" ----- ")
+
                 tmpH = tmpH.derecha
             tmpV = tmpV.abajo
+        print("Tipo de mision: Rescate")
+        print("Unidad civil rescatada: Y" +str(posYCivil) +" X" + str(posXCivil) )
     
-    def algoritmo (self):
-        print("ChapinRescue, ChapinFighter ")
-        x=input("Escriba el tipo de operacion")
-        #chapinrescure, caracteristicas: Inicia punto de entrada llegar hasta unidad civil no puede pelear
-        if x.lower() ==  "chapinrescue":
-            pass
+    def algoritmo (self,posX,posY):
+        tamanio = posX*posY
+        while tamanio > 0:
+            tmpV:Nodo = self.raiz.derecha.abajo
+            print("camino",tmpV.tiene_camino,sep="----")
+            while tmpV != None:
+                tmpH = tmpV
+                while tmpH != None:
+                    actual:Nodo = tmpH
+                    if not actual.tiene_camino: 
+                        if self.comprobar_vecino(actual.derecha,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Derecha"
+                        elif self.comprobar_vecino(actual.izquierda,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Izquierda"
+                        elif self.comprobar_vecino(actual.arriba,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Arriba"
+                        elif self.comprobar_vecino(actual.abajo,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Abajo"
+                    tmpH = tmpH.derecha
+                tmpV = tmpV.abajo
+            tamanio = tamanio - 1 
             
             
+    def comprobar_vecino(self,nodo_actual:Nodo,posX,posY):
+        if nodo_actual is None:
+            return False
+        
+        if nodo_actual.dato == "*" or  str(nodo_actual.dato).isdigit() or nodo_actual.dato == "R"  :
+            return False
 
+        if nodo_actual.tiene_camino:
+            return True
+
+        if(nodo_actual.posHorizontal == posX and nodo_actual.posVertical == posY):
+            return True
+        return False
+
+
+    def posPorEntrada_2(self):
+        
+        tmpV = self.raiz
+        print("Seleccione una entrada")
+        posX= int(input("Numero en posicion Horizontal/X:"))
+        posY= int(input("Numero en posicion vertical/Y:"))
+        print(tmpV.posVertical,tmpV.posHorizontal,posY,sep=" ---- ")
+
+        print("Seleccione un Recurso")
+        posXCivil=int(input("Numero en posicion Horizontal/X:"))
+        posYCivil=int(input("Numero en posicion vertical/Y:"))
+        self.algoritmo_2(posXCivil,posYCivil)
+
+        while tmpV.abajo and tmpV.posVertical <= int(posY):
+            tmpH = tmpV
+            while tmpH.derecha and  tmpH.posHorizontal <= int(posX):
+                if(tmpH.posHorizontal == posX and tmpH.posVertical == posY):
+                    nodoActual = tmpH
+                    print("dato",tmpH.dato,"tiene camino",tmpH.tiene_camino,sep=" --- ")
+                    if tmpH.tiene_camino  == True:
+                        print("se encontro camino posible")
+                    else:
+                        print("No se encontro camino posible")
+ 
+                    if(tmpH.tiene_camino):
+                        while nodoActual and not ((posYCivil == nodoActual.posVertical) and (posXCivil == nodoActual.posHorizontal)):
+                            nodoActual.pintar_camino = True
+
+                            if nodoActual.direccion_camino == "Derecha":
+                                nodoActual = nodoActual.derecha
+                                print("Se movio hacia la Derecha")
+                            elif nodoActual.direccion_camino == "Izquierda":
+                                nodoActual = nodoActual.izquierda
+                                print("Se movio hacia la Izquierda")
+                            elif nodoActual.direccion_camino == "Arriba":
+                                nodoActual = nodoActual.arriba
+                                print("Se movio hacia la Arriba")
+                            elif nodoActual.direccion_camino == "Abajo":
+                                nodoActual = nodoActual.abajo
+                                print("Se movio hacia la Abajo")
+                    
+                        print("fin",nodoActual.posHorizontal,nodoActual.posVertical,"original",posXCivil,posYCivil,sep=" ----- ")
+
+                tmpH = tmpH.derecha
+            tmpV = tmpV.abajo
+        print("Tipo de mision: Extracion de recursos")
+        print("Recurso extraido: Y" +str(posYCivil) +" X" + str(posXCivil) )
+    
+    def algoritmo_2 (self,posX,posY):
+        tamanio = posX*posY
+        while tamanio > 0:
+            tmpV:Nodo = self.raiz.derecha.abajo
+            print("camino",tmpV.tiene_camino,sep="----")
+            while tmpV != None:
+                tmpH = tmpV
+                while tmpH != None:
+                    actual:Nodo = tmpH
+                    if not actual.tiene_camino: 
+                        if self.comprobar_vecino_2(actual.derecha,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Derecha"
+                        elif self.comprobar_vecino_2(actual.izquierda,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Izquierda"
+                        elif self.comprobar_vecino_2(actual.arriba,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Arriba"
+                        elif self.comprobar_vecino_2(actual.abajo,posX,posY): 
+                            actual.tiene_camino = True
+                            actual.direccion_camino = "Abajo"
+                    tmpH = tmpH.derecha
+                tmpV = tmpV.abajo
+            tamanio = tamanio - 1 
+            
+            
+    def comprobar_vecino_2(self,nodo_actual:Nodo,posX,posY):
+        if nodo_actual is None:
+            return False
+        
+        if nodo_actual.dato == "*" or  str(nodo_actual.dato).isdigit() or nodo_actual.dato == "R"  :
+            return False
+
+        if nodo_actual.tiene_camino:
+            return True
+        
+        if  str(nodo_actual.dato).isdigit() == True:
+            if nodo_actual.dato <0 :
+                return True
+
+        if(nodo_actual.posHorizontal == posX and nodo_actual.posVertical == posY):
+            return True
+        return False
 
 
 
@@ -283,7 +451,7 @@ class MatrizOrtogonal:
 
     def graficarNodos(self, grafo, nodoE):
         
-        nodo = nodoE
+        nodo:Nodo = nodoE
         id = str(nodo.posVertical)+"_"+str(nodo.posHorizontal)
         color="white"
 
@@ -302,7 +470,8 @@ class MatrizOrtogonal:
                 color= "firebrick1"
 
         
-        
+        if nodo.pintar_camino:
+            color = "yellow"    
 
 
         grafo.node(id, nodo.dato,group=str(nodo.posHorizontal),style='filled',fillcolor=color)

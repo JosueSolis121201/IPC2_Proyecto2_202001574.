@@ -16,6 +16,7 @@ from matriz_dispersa import MatrizOrtogonal , ListaDoble
 class lectura():
     def __init__(self):
         self.lista = ListaDoble()
+        self.nombre_robot=""
         
         self.analizarXML()
 
@@ -70,7 +71,7 @@ class lectura():
                     matrizOrtogonal.insertarDato(str(letra),int(y),int(contador_letra)) 
                     contador_letra = contador_letra +  1
                 x=x+1
-                print("num_fila:%s" % fila_num +"fila_texto:%s" % fila_texto )
+                #print("num_fila:%s" % fila_num +"fila_texto:%s" % fila_texto )
 
             unidad_militar = ciudad.getElementsByTagName("unidadMilitar")
             for unidad_militar in unidad_militar:
@@ -84,30 +85,47 @@ class lectura():
                 print("unidad_militar_posFila:%s" % unidad_militar_posFila)
                 print("unidad_militar_poscolumna:%s" % unidad_militar_poscolumna)"""
         
-            self.lista.agregar(matrizOrtogonal)
-            matrizOrtogonal.recorrerMatriz()
-            matrizOrtogonal.Entradas()
-            matrizOrtogonal.posPorEntrada()
         
         
-            
-                
-                
-            # robots enemigos
-           
-
 
         #robots aliados
+        print("1.chapinrescue, 2.chapinfighter")
+        a=int(input("Escoja el numero de mision: "))
+        
+        vida_robot_figther =0
         for robot in robot:
             nombre = robot.getElementsByTagName("nombre")
             for nombre in nombre:
-                nametag = robot.getElementsByTagName("nombre")[0].firstChild.data
-                """print("nametag:%s" % nametag)"""
                 IDtipo  = nombre.getAttribute("tipo")
+                nametag = robot.getElementsByTagName("nombre")[0].firstChild.data
                 IDcapacidad  = nombre.getAttribute("capacidad")
-                """print("IDtipo:%s" % IDtipo)"""
-                if IDcapacidad != "":
-                    """print("IDcapacidad:%s" % IDcapacidad)"""
+                
+                if IDtipo.lower()  == "chapinrescue" and a == 1:
+                    print("Se encontro : " + nametag + " como chapinrescue")
+                
+               # print("IDtipo:%s" % IDtipo)
+                if IDtipo.lower()  == "chapinfighter" and a == 2:
+                    print("Se encontro : " + nametag + " como chapinfighter con capacidad de: "+ IDcapacidad)
+        self.nombre_robot = input("Nombre del robot que desea utilizar: ")
+        self.lista.agregar(matrizOrtogonal)
+        matrizOrtogonal.recorrerMatriz()
+        
+        if a  == 1:
+            #Chapinrescure funciones
+            matrizOrtogonal.Entradas()
+            matrizOrtogonal.posPorEntrada_1()
+            matrizOrtogonal.recorrerMatriz()
+            print("Se utilizo a "+ self.nombre_robot +" de tipo: ChapinRescure")
+            
+            
+        elif a  == 2:
+            matrizOrtogonal.Entradas()
+            matrizOrtogonal.posPorEntrada_2()
+            matrizOrtogonal.recorrerMatriz()
+            print("Se utilizo a "+ self.nombre_robot +" de tipo: ChapinFighter - Capacidad de combate inicial "+0 + "Capacidad de combate final"+0)
+        else:
+            print("no se escojio operacion")
+        
     
 
 
