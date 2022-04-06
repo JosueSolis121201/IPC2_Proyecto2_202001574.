@@ -430,15 +430,15 @@ class MatrizOrtogonal:
         if nodo_actual is None:
             return False
         
-        if nodo_actual.dato == "*" or  str(nodo_actual.dato).isdigit() or nodo_actual.dato == "R"  :
+        if nodo_actual.dato == "*":
             return False
 
         if nodo_actual.tiene_camino:
             return True
         
-        if  str(nodo_actual.dato).isdigit() == True:
+        """if  str(nodo_actual.dato).isdigit() == True:
             if nodo_actual.dato <0 :
-                return True
+                return True"""
 
         if(nodo_actual.posHorizontal == posX and nodo_actual.posVertical == posY):
             return True
@@ -520,3 +520,22 @@ class ListaDoble:
             self.derecha.anterior = nuevoNodo
             nuevoNodo.siguiente = self.derecha
             self.derecha = nuevoNodo
+
+    def graficar(self):
+        puntero= self.izquierda
+        concateniacion=""
+        while puntero != None:
+            if hasattr(puntero.dato, 'imprimir'): 
+                concateniacion=concateniacion + puntero.dato.string()
+            else:
+                print(puntero.dato)
+            puntero = puntero.anterior
+        return concateniacion
+
+    def graficar_original(self,nombre_buscar):
+        puntero= self.end
+        while puntero != None: 
+            matriz = puntero.dato
+            if nombre_buscar == matriz.sid:
+                matriz.graficar()
+            puntero = puntero.anterior
