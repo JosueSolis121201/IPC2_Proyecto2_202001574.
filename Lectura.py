@@ -20,6 +20,9 @@ class lectura():
         
         self.analizarXML()
 
+        nombre = input("ingrese nombre ")
+        self.lista.graficar(nombre)
+
     def leerXML(self):
         Tk().withdraw()
         archivoxml=""
@@ -44,9 +47,8 @@ class lectura():
         matrizOrtogonal = MatrizOrtogonal()
 
         #robots aliados
-        print("1.chapinrescue, 2.chapinfighter")
-        a=int(input("Escoja el numero de mision: "))
-        
+       
+        a = ""
         vida_robot_figther =0
         for robot in robot:
             nombre = robot.getElementsByTagName("nombre")
@@ -61,7 +63,7 @@ class lectura():
                # print("IDtipo:%s" % IDtipo)
                 if IDtipo.lower()  == "chapinfighter" and a == 2:
                     print("Se encontro : " + nametag + " como chapinfighter con capacidad de: "+ IDcapacidad)
-        self.nombre_robot = input("Nombre del robot que desea utilizar: ")
+        #self.nombre_robot = input("Nombre del robot que desea utilizar: ")
 
         #ciudades
         for ciudad in ciudades:
@@ -71,11 +73,13 @@ class lectura():
             #ID coluimna y fila
             for nombre in nombres:
                 nombre_ciudad = ciudad.getElementsByTagName("nombre")[0].firstChild.data     
+                matrizOrtogonal.nombre_ciudad = nombre_ciudad
+                
                 IDfilas  = nombre.getAttribute("filas")
                 IDcolumnas  = nombre.getAttribute("columnas")
                 
-                """print("nombre_ciudad:%s" % nombre_ciudad)
-                print("IDfilas:%s" % IDfilas)
+                print("nombre_ciudad: " + nombre_ciudad)
+                """print("IDfilas:%s" % IDfilas)
                 print("IDcolumnas:%s" % IDcolumnas)"""
             #Contenido de filas y enumeracion
             filas = ciudad.getElementsByTagName("fila")
@@ -106,29 +110,10 @@ class lectura():
                 print("unidad_militar_poscolumna:%s" % unidad_militar_poscolumna)"""
         
             self.lista.agregar(matrizOrtogonal)
-            matrizOrtogonal.recorrerMatriz()
 
         
         
-        
-        
-            if a  == 1:
-                #Chapinrescure funciones
-                matrizOrtogonal.Entradas()
-                matrizOrtogonal.posPorEntrada_1()
-                matrizOrtogonal.recorrerMatriz()
-                print("Se utilizo a "+ self.nombre_robot +" de tipo: ChapinRescure")
-            elif a  == 2:
-                matrizOrtogonal.Entradas()
-                matrizOrtogonal.posPorEntrada_2()
-                matrizOrtogonal.recorrerMatriz()
-                print("Se utilizo a "+ self.nombre_robot +" de tipo: ChapinFighter - Capacidad de combate inicial "+str(0) + "Capacidad de combate final"+str(0))
-            else:
-                print("no se escojio operacion")
-        
-    
-
-
+     
 
 
 

@@ -31,6 +31,7 @@ class MatrizOrtogonal:
         self.contador_civil=0
         self.posVertical_Entrada=0
         self.posHorizontal_Entrada=0
+        self.nombre_ciudad = ""
         
 
     def crearIndiceVertical(self, pos):
@@ -235,8 +236,6 @@ class MatrizOrtogonal:
         dot.view()
         pass
     
-
-    
     def Entradas (self):
         tmpV = self.raiz
 
@@ -257,9 +256,6 @@ class MatrizOrtogonal:
             self.posHorizontal_Entrada =0
             self.posVertical_Entrada=self.posVertical_Entrada+1
             tmpV = tmpV.abajo
-
-    
-
 
     def posPorEntrada_1(self):
         
@@ -313,7 +309,6 @@ class MatrizOrtogonal:
         tamanio = posX*posY
         while tamanio > 0:
             tmpV:Nodo = self.raiz.derecha.abajo
-            print("camino",tmpV.tiene_camino,sep="----")
             while tmpV != None:
                 tmpH = tmpV
                 while tmpH != None:
@@ -335,7 +330,6 @@ class MatrizOrtogonal:
                 tmpV = tmpV.abajo
             tamanio = tamanio - 1 
             
-            
     def comprobar_vecino(self,nodo_actual:Nodo,posX,posY):
         if nodo_actual is None:
             return False
@@ -349,7 +343,6 @@ class MatrizOrtogonal:
         if(nodo_actual.posHorizontal == posX and nodo_actual.posVertical == posY):
             return True
         return False
-
 
     def posPorEntrada_2(self):
         
@@ -403,7 +396,6 @@ class MatrizOrtogonal:
         tamanio = posX*posY
         while tamanio > 0:
             tmpV:Nodo = self.raiz.derecha.abajo
-            print("camino",tmpV.tiene_camino,sep="----")
             while tmpV != None:
                 tmpH = tmpV
                 while tmpH != None:
@@ -425,7 +417,6 @@ class MatrizOrtogonal:
                 tmpV = tmpV.abajo
             tamanio = tamanio - 1 
             
-            
     def comprobar_vecino_2(self,nodo_actual:Nodo,posX,posY):
         if nodo_actual is None:
             return False
@@ -436,18 +427,13 @@ class MatrizOrtogonal:
         if nodo_actual.tiene_camino:
             return True
         
-        """if  str(nodo_actual.dato).isdigit() == True:
+        if  str(nodo_actual.dato).isdigit() == True:
             if nodo_actual.dato <0 :
-                return True"""
+                return True
 
         if(nodo_actual.posHorizontal == posX and nodo_actual.posVertical == posY):
             return True
         return False
-
-
-
-        
-
 
     def graficarNodos(self, grafo, nodoE):
         
@@ -521,21 +507,26 @@ class ListaDoble:
             nuevoNodo.siguiente = self.derecha
             self.derecha = nuevoNodo
 
-    def graficar(self):
+    def graficar(self,nombre):
         puntero= self.izquierda
-        concateniacion=""
         while puntero != None:
-            if hasattr(puntero.dato, 'imprimir'): 
-                concateniacion=concateniacion + puntero.dato.string()
-            else:
-                print(puntero.dato)
+            matriz_actual:MatrizOrtogonal = puntero.dato
+            if(str(matriz_actual.nombre_ciudad).lower() == nombre.lower()):
+                print("1.chapinrescue, 2.chapinfighter")
+                a=int(input("Escoja el numero de mision: "))
+                matriz_actual.recorrerMatriz()
+                if a  == 1:
+                    #Chapinrescure funciones
+                    matriz_actual.Entradas()
+                    matriz_actual.posPorEntrada_1()
+                    matriz_actual.recorrerMatriz()
+                elif a  == 2:
+                    matriz_actual.Entradas()
+                    matriz_actual.posPorEntrada_2()
+                    matriz_actual.recorrerMatriz()
+                else:
+                    print("no se escojio operacion")
+                return
             puntero = puntero.anterior
-        return concateniacion
-
-    def graficar_original(self,nombre_buscar):
-        puntero= self.end
-        while puntero != None: 
-            matriz = puntero.dato
-            if nombre_buscar == matriz.sid:
-                matriz.graficar()
-            puntero = puntero.anterior
+        print("no se encontro matriz")
+    
